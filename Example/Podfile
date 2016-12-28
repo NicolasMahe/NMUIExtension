@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NMUIExtension_Example' do
+  pod 'NMUIExtension', :path => '../'
+
+  target 'NMUIExtension_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
