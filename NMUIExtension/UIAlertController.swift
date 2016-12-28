@@ -10,7 +10,7 @@ import UIKit
 
 extension UIAlertController {
   
-  class func showAlert(
+  public class func showAlert(
     title: String?,
     message: String?,
     cancelMessage: String = "OK",
