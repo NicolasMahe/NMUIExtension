@@ -1,3 +1,4 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'NMUIExtension_Example' do
@@ -6,6 +7,6 @@ target 'NMUIExtension_Example' do
   target 'NMUIExtension_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end

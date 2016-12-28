@@ -1,0 +1,22 @@
+PODS:
+  - NMCGExtension (0.0.1)
+  - NMUIExtension (0.0.1):
+    - NMCGExtension
+    - SnapKit (~> 3.0)
+  - SnapKit (3.1.2)
+
+DEPENDENCIES:
+  - NMUIExtension (from `../`)
+
+EXTERNAL SOURCES:
+  NMUIExtension:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NMCGExtension: 734b1af8b2c5651e8191ef0367b1b9e75e820e54
+  NMUIExtension: ebb205b503035a54243806fec4e1a0cf13213805
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+
+PODFILE CHECKSUM: 77f00cc816912230b28b4ebc976354914c93204b
+
+COCOAPODS: 1.1.1
