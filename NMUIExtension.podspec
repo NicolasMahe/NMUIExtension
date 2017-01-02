@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NMUIExtension'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'Extension on UIKit'
   s.description      = <<-DESC
 Add some nice things to UIKit.
