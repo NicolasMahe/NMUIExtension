@@ -78,9 +78,9 @@ extension UIView {
    Add a view controller as child controller and set the view's size to the child size
    */
   public func add(
-    viewChildSized: UIView
+    viewChildSized: UIView,
+    offset: UIEdgeInsets = UIEdgeInsets.zero
   ) {
-    
     self.translatesAutoresizingMaskIntoConstraints = false
     viewChildSized.translatesAutoresizingMaskIntoConstraints = false
     
@@ -92,17 +92,13 @@ extension UIView {
     
     //create constraint top and left on view controller
     self.snp.makeConstraints { (make) in
-      make.edges.top.equalTo(viewChildSized)
-      make.edges.left.equalTo(viewChildSized)
-    }
-    
-    viewChildSized.translatesAutoresizingMaskIntoConstraints = false
-    viewChildSized.layoutIfNeeded()
-    
-    //create constraint width and height on self
-    self.snp.makeConstraints { (make) in
-      make.edges.width.equalTo(viewChildSized)
-      make.edges.height.equalTo(viewChildSized)
+      make.width.equalTo(viewChildSized).offset(offset.left + offset.right)
+      make.height.equalTo(viewChildSized).offset(offset.top + offset.bottom)
+      
+      make.top.equalTo(viewChildSized).offset(offset.top)
+      make.bottom.equalTo(viewChildSized).offset(offset.bottom)
+      make.left.equalTo(viewChildSized).offset(offset.left)
+      make.right.equalTo(viewChildSized).offset(offset.right)
     }
   }
   
