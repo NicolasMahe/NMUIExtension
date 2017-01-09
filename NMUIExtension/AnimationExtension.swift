@@ -83,5 +83,40 @@ extension UIView {
     }
     
   }
+  
+  /**
+   Rotation
+   */
+  public func rotate(
+    fromAngle: CGFloat,
+    toAngle: CGFloat,
+    animated: Bool = true,
+    duration: Double = 0.3,
+    timingFunction: String = kCAMediaTimingFunctionEaseOut
+  ) {
+    if animated == false {
+      let transform = CGAffineTransform.identity.rotated(by: toAngle)
+      self.transform = transform
+    }
+    else {
+      CATransaction.begin()
+      let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+      
+      rotationAnimation.fromValue = fromAngle
+      rotationAnimation.toValue = toAngle
+      
+      rotationAnimation.duration = duration
+      rotationAnimation.timingFunction = CAMediaTimingFunction(name: timingFunction)
+      
+      rotationAnimation.isRemovedOnCompletion = false
+      rotationAnimation.fillMode = kCAFillModeForwards
+      
+      self.layer.add(
+        rotationAnimation,
+        forKey: "rotationAnimation"
+      )
+      CATransaction.commit()
+    }
+  }
 
 }
