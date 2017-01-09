@@ -11,8 +11,8 @@ import UIKit
 extension UIAlertController {
   
   public class func showAlert(
-    title: String?,
-    message: String?,
+    title: String? = nil,
+    message: String? = nil,
     cancelMessage: String = "OK",
     controller: UIViewController?
   ) {
