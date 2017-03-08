@@ -57,7 +57,7 @@ extension UIView {
   }
   
   /**
-   Add a view controller as child controller and set the view's size to the child size
+   Add a view controller as child controller and set the child view size to the parent size
    */
   public func addWithConstraint(
     view: UIView
