@@ -39,35 +39,34 @@ extension UIColor {
   
 }
 
-
 extension UIColor {
-  public func colorWithHue(_ newHue: CGFloat) -> UIColor {
-    var saturation: CGFloat = 1.0, brightness: CGFloat = 1.0, alpha: CGFloat = 1.0
+  public func withHue(_ newHue: CGFloat) -> UIColor {
+    var saturation: CGFloat = 1, brightness: CGFloat = 1, alpha: CGFloat = 1
     self.getHue(nil, saturation: &saturation, brightness: &brightness, alpha: &alpha)
     return UIColor(hue: newHue, saturation: saturation, brightness: brightness, alpha: alpha)
   }
-  public func colorWithSaturation(_ newSaturation: CGFloat) -> UIColor {
-    var hue: CGFloat = 1.0, brightness: CGFloat = 1.0, alpha: CGFloat = 1.0
+  public func withSaturation(_ newSaturation: CGFloat) -> UIColor {
+    var hue: CGFloat = 1, brightness: CGFloat = 1, alpha: CGFloat = 1
     self.getHue(&hue, saturation: nil, brightness: &brightness, alpha: &alpha)
     return UIColor(hue: hue, saturation: newSaturation, brightness: brightness, alpha: alpha)
   }
-  public func colorWithBrightness(_ newBrightness: CGFloat) -> UIColor {
-    var hue: CGFloat = 1.0, saturation: CGFloat = 1.0, alpha: CGFloat = 1.0
+  public func withBrightness(_ newBrightness: CGFloat) -> UIColor {
+    var hue: CGFloat = 1, saturation: CGFloat = 1, alpha: CGFloat = 1
     self.getHue(&hue, saturation: &saturation, brightness: nil, alpha: &alpha)
     return UIColor(hue: hue, saturation: saturation, brightness: newBrightness, alpha: alpha)
   }
-  public func colorWithAlpha(_ newAlpha: CGFloat) -> UIColor {
-    var hue: CGFloat = 1.0, saturation: CGFloat = 1.0, brightness: CGFloat = 1.0
+  public func withAlpha(_ newAlpha: CGFloat) -> UIColor {
+    var hue: CGFloat = 1, saturation: CGFloat = 1, brightness: CGFloat = 1
     self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: nil)
     return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: newAlpha)
   }
-  public func colorWithHighlight(_ highlight: CGFloat) -> UIColor {
-    var red: CGFloat = 1.0, green: CGFloat = 1.0, blue: CGFloat = 1.0, alpha: CGFloat = 1.0
+  public func highlight(_ highlight: CGFloat) -> UIColor {
+    var red: CGFloat = 1, green: CGFloat = 1, blue: CGFloat = 1, alpha: CGFloat = 1
     self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
     return UIColor(red: red * (1-highlight) + highlight, green: green * (1-highlight) + highlight, blue: blue * (1-highlight) + highlight, alpha: alpha * (1-highlight) + highlight)
   }
-  public func colorWithShadow(_ shadow: CGFloat) -> UIColor {
-    var red: CGFloat = 1.0, green: CGFloat = 1.0, blue: CGFloat = 1.0, alpha: CGFloat = 1.0
+  public func shadow(_ shadow: CGFloat) -> UIColor {
+    var red: CGFloat = 1, green: CGFloat = 1, blue: CGFloat = 1, alpha: CGFloat = 1
     self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
     return UIColor(red: red * (1-shadow), green: green * (1-shadow), blue: blue * (1-shadow), alpha: alpha * (1-shadow) + shadow)
   }
