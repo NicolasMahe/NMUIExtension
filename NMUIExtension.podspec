@@ -17,6 +17,7 @@ Add some nice things to UIKit.
 
   s.frameworks = 'CoreGraphics'
   s.dependency "SnapKit", "~> 3.0"
+  s.dependency 'PromiseKit', '~> 4.1'
   s.dependency 'NMCGExtension'
 
 end
