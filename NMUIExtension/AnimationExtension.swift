@@ -19,6 +19,7 @@ extension UIView {
     view: UIView? = nil,
          animated: Bool = true,
          duration: Double = 0.3,
+         delay: Double = 0.0,
          option: UIViewAnimationOptions = .curveEaseOut,
          constant: (() -> Void)? = nil,
          modification: (() -> Void)? = nil,
@@ -33,7 +34,7 @@ extension UIView {
 
         UIView.animate(
           withDuration: duration,
-          delay: 0.0,
+          delay: delay,
           options: option,
           animations: { () -> Void in ()
             view?.layoutIfNeeded()
