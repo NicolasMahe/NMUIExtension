@@ -69,8 +69,8 @@ extension UIView {
     view.updateConstraints()
     
     self.addSubview(view)
-    self.snp.makeConstraints { (make) in
-      make.edges.equalTo(view)
+    view.snp.makeConstraints { (make) in
+      make.edges.equalTo(self)
     }
   }
   
@@ -91,6 +91,7 @@ extension UIView {
     self.addSubview(viewChildSized)
     
     //create constraint top and left on view controller
+    //@todo HIGH: les contraintes sont dans le mauvaise sens
     self.snp.makeConstraints { (make) in
       make.width.equalTo(viewChildSized).offset(offset.left + offset.right)
       make.height.equalTo(viewChildSized).offset(offset.top + offset.bottom)
