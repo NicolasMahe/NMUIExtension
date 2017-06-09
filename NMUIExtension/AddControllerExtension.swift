@@ -17,17 +17,17 @@ extension UIViewController {
    */
   public func add(
     viewController: UIViewController,
-    toView view: UIView
+    toView view: UIView?
     ) {
-    view.add(view: viewController.view)
+    view?.add(view: viewController.view)
     self.addChildViewController(viewController)
   }
   
   public func addWithConstraint(
     viewController: UIViewController,
-    toView view: UIView
+    toView view: UIView?
     ) {
-    view.addWithConstraint(view: viewController.view)
+    view?.addWithConstraint(view: viewController.view)
     self.addChildViewController(viewController)
   }
   
@@ -36,9 +36,9 @@ extension UIViewController {
    */
   public func add(
     viewControllerChildSized viewController: UIViewController,
-    toView view: UIView
+    toView view: UIView?
   ) {
-    view.add(viewChildSized: viewController.view)
+    view?.add(viewChildSized: viewController.view)
     self.addChildViewController(viewController)
   }
   
